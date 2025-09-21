@@ -1,0 +1,35 @@
+<template>
+  <div class="layout-container">
+    <div class="left">
+      <slot name="left"></slot>
+    </div>
+    <div class="main">
+      <slot></slot>
+    </div>
+    <div class="right">
+      <slot name="right"></slot>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {};
+</script>
+
+<style scoped lang="less">
+.layout-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .main {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .left,
+  .right {
+    flex: 0 0 auto;
+    overflow: hidden;
+  }
+}
+</style>
